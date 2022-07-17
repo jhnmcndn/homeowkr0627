@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Press+Start+2P&display=swap');
+
+:root {
+  --bg-color: #4b4453;
+  --base-color: #845ec2;
+  --secondary-color: #b0a8b9;
+  --orngdark-color: #c34a36;
+  --ornglight-color: #ff8066;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Bungee Shade', cursive;
+  background-image: linear-gradient(to right top, #4b4453, #684663, #8d4463, #ae4254, #c34a36);
+  background-repeat: no-repeat;
+  height: 100%;
+  padding: 10rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100vh;
+  width: 100%;
+  grid-gap: 2rem;
+  grid-template-areas:
+  "div1 div1 div2"
+  "div1 div1 div4"
+  "div3 div5 div4";
+}
+
+main > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #272727FF;
+  transition: all 0.7s ease;
+  border-radius: 1.6rem;
+  /* From https://css.glass */
+  background: rgba(39, 39, 39, 0.23);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+  border: 1px solid rgba(39, 39, 39, 0.19);
+  height: 100%;
+  width: 100%;
+
+}
+
+div:hover {
+  transform: translateY(20px) translateX(20px) scale(1.01);
+  box-shadow: -12px -4px 40px #272727FF;
+}
+
+.div1 {
+  grid-area: div1;
+}
+
+.div2 {
+  grid-area: div2;
+}
+
+.div3 {
+  grid-area: div3;
+}
+
+.div4 {
+  grid-area: div4;
+}
+
+.div5 {
+  grid-area: div5;
+}
+
+.box > p {
+  font-size: 20rem;
+  line-height: normal !important;
+}
+
+.box > p {
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%, 60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+p:before,
+p:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+p:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%, 64% {
+    transform: translate(2px, -2px);
+  }
+  4%, 60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+p:after {
+  animation: glitchBottom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBottom {
+  2%, 64% {
+    transform: translate(-2px, 0);
+  }
+  4%, 60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+

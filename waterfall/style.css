@@ -1,0 +1,34 @@
+*, *::before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.text {
+  text-align: center;
+  margin: 40px auto;
+  width: fit-content;
+}
+
+.image-container {
+  max-width: 1850px;
+  margin: 0 auto;
+  columns: 4;
+  column-gap: 10px;
+  row-gap: 10px;
+
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+
+
